@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoRegistro</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/logo.png" type="image/x-icon">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <div class="container-fluid min-vh-100 d-flex flex-column p-0 m-0"> 
+    <div class="row g-0">
+      <div class="col-12">
+        <header id="cabecalho" class="py-4 border-bottom border-dark border-1">
+          <a class="navbar-brand d-flex align-items-center ms-5" href="#">
+            <img src="images/logo.png" id="imagem-logo" alt="Logo" width="40" height="40">
+            <div id="div-texto-logo"> <span id="texto-logo"> GeoRegistro </span> </div>
+          </a>
+        </header>
+      </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="row g-0 flex-grow-1">
+      <div class="col-12 d-flex align-items-center justify-content-center">
+        <form class="border border-dark rounded col-9 p-5 mt-5 mb-5">
+          <div class="form-group mb-5">
+            <label for="inputEmail" class="mb-1">Email:</label>
+            <input type="email" class="form-control mb-1" id="inputEmail" aria-describedby="emailHelp"
+              placeholder="Digite seu email">
+            <small id="emailHelp" class="form-text text-muted">Nunca compartilhe seu email com ninguém.</small>
+          </div>
+          <div class="form-group mb-5">
+            <label for="inputSenha" class="mb-1">Senha</label>
+            <input type="password" class="form-control mb-1" id="inputSenha" placeholder="Digite sua senha">
+          </div>
+          <div class="d-flex align-items-center justify-content-center">
+            <button type="submit" class="btn btn-primary col-5">Logar</button>
+          </div>
+          <div class="d-flex align-items-center justify-content-center my-3">
+            <hr class="flex-grow-1">
+            <span class="px-3 text-muted fw-semibold">OU</span>
+            <hr class="flex-grow-1">
+          </div>
+          <div class="d-flex align-items-center justify-content-center">
+            <a href="cadastrarconta.html" class="btn btn-primary col-5">Cadastrar conta</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="row g-0">
+      <div class="col-12 ">
+        <footer class="py-3 border-top border-dark border-1">
+          <div id="div-texto-footer" class="text-center"> <span id="texto-footer"> @ Todos os direitos reservados à
+              Juvam Rodrigues, Bianca Jennifer, Lucas Estanislau </span> </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
