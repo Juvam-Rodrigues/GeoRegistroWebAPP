@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../fontes/Inter/static/Inter_18pt-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fontes/Inter/static/Inter_18pt-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    background-color: #EAEEEF;
+}
+
+/*NAVBAR*/
+
+
+nav span {
+    color: #06323A !important;
+}
+
+nav div a {
+    color: #06323A !important;
+    font-family: 'Inter';
+}
+
+.registrarT {
+    background-color: #06323A;
+    border-radius: 16px;
+    color: #EAEEEF !important;
+    border-color: #06323A !important;
+}
+
+nav div a:hover {
+    color: #91D625 !important;
+}
+
+.registrarT:hover {
+    background-color: #91D625;
+    color: #EAEEEF !important;
+}
+
+
+/*FORMS*/
+
+.titulo {
+    color: #06323A;
+    font-family: Inter;
+}
+
+label {
+    color: #656464;
+}
+
+.form-control {
+    background-color: #E3E7E8;
+}
+
+.cadastrobtn {
+    background-color: #06323A;
+    border-radius: 10px;
+    color: #EAEEEF !important;
+    border-color: #06323A !important;
+}
+
+.loginbtn {
+    background-color: #91D625;
+    border-radius: 10px;
+    border-color: #91D625 !important;
+}
+
+.cadastrobtn:hover {
+    background-color: #91D625;
+}
