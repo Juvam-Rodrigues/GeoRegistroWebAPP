@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <link rel="stylesheet" href="css/stylelogin.css">
     <link rel="icon" href="images/LogoOficial.svg" type="image/x-icon">
 </head>
@@ -51,10 +50,6 @@
                             Cadastre-se
                         </a>
 
-                        <a class="btn btn-primary registrarT" href="#">
-                            Registrar terreno
-                        </a>
-
                     </div>
                 </div>
 
@@ -64,7 +59,7 @@
         <!-- CONTEÚDO -->
         <main class="flex-grow-1 d-flex align-items-center justify-content-center px-3">
 
-            <form class="border border-dark rounded p-4 p-md-5 w-100" style="max-width: 700px;">
+            <form id=formLogin class="border border-dark rounded p-4 p-md-5 w-100" style="max-width: 700px;">
 
                 <h3 class="text-center mb-2 titulo">
                     Login
@@ -75,7 +70,7 @@
                     <input
                         type="email"
                         class="form-control"
-                        placeholder="Digite seu email">
+                        placeholder="Digite seu email" id="email" required>
                 </div>
 
                 <div class="mb-4">
@@ -83,7 +78,7 @@
                     <input
                         type="password"
                         class="form-control"
-                        placeholder="Digite sua senha">
+                        placeholder="Digite sua senha" id="senha" required>
                 </div>
 
                 <div class="row g-2 align-items-center">
@@ -119,6 +114,7 @@
 
     </div>
 
+    <script src="js/enviar_login.js"></script>
 </body>
 
 </html>

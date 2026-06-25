@@ -51,10 +51,6 @@
                             Cadastre-se
                         </a>
 
-                        <a class="btn btn-primary registrarT" href="#">
-                            Registrar terreno
-                        </a>
-
                     </div>
                 </div>
 
@@ -64,7 +60,7 @@
         <!-- CONTEÚDO -->
         <main class="flex-grow-1 d-flex align-items-center justify-content-center px-3">
 
-            <form class="border border-dark rounded p-4 p-md-5 w-100" style="max-width: 700px;">
+            <form id="formCadastro" class="border border-dark rounded p-4 p-md-5 w-100" style="max-width: 700px;">
 
                 <h3 class="text-center mb-4 titulo">
                     Cadastro
@@ -73,9 +69,9 @@
                 <div class="mb-3">
                     <label class="form-label">Nome completo</label>
                     <input
-                        type="email"
+                        type="text"
                         class="form-control"
-                        placeholder="Digite seu Nome completo">
+                        placeholder="Digite seu nome completo" id="nome" required>
                 </div>
 
                 <div class="mb-3">
@@ -83,7 +79,7 @@
                     <input
                         type="email"
                         class="form-control"
-                        placeholder="Digite seu email">
+                        placeholder="Digite seu email" id="email" required>
                 </div>
 
                 <div class="mb-4">
@@ -91,7 +87,7 @@
                     <input
                         type="password"
                         class="form-control"
-                        placeholder="Digite sua senha">
+                        placeholder="Digite sua senha" id="senha" required>
                 </div>
 
                 <div class="row g-2 align-items-center">
@@ -127,6 +123,7 @@
 
     </div>
 
+    <script src="js/enviar_cadastro.js"></script>
 </body>
 
 </html>
