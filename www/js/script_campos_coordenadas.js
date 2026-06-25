@@ -28,6 +28,7 @@ document.addEventListener("keydown", function (event) {
             <div class="d-flex gap-2 linha-ponto">
                 <input
                     type="text"
+                    name="coordenadas[]"
                     class="form-control coordenada"
                     placeholder="Coordenada">
             </div>
