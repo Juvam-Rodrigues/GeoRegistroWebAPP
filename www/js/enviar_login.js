@@ -30,7 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const idUsuario = await resposta.text();
             console.log("ID do usuário:", idUsuario);
 
+            // Salva o ID para uso nas próximas páginas
+            localStorage.setItem("idUsuario", idUsuario);
+
             alert("Usuário logado com sucesso!");
+            window.location.replace("add_coordenadas_terreno.html");
 
         } catch (erro) {
             console.error(erro);
