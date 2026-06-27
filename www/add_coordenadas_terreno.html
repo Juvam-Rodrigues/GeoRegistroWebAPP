@@ -8,8 +8,12 @@
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
     <link rel="stylesheet" href="css/stylelogin.css">
+    <link rel="stylesheet" href="css/add_coordenadas.css">
     <link rel="icon" href="images/LogoOficial.svg" type="image/x-icon">
+    <script src="js/script_campos_coordenadas.js"></script>
+    <script src="js/obter_coordenadas.js"></script>
 </head>
 
 <body>
@@ -42,12 +46,8 @@
                 <div class="collapse navbar-collapse" id="menu">
                     <div class="ms-auto d-flex flex-column flex-lg-row align-items-lg-center gap-3">
 
-                        <a class="nav-link" href="#">
-                            Login
-                        </a>
-
-                        <a class="nav-link" href="cadastrarconta.html">
-                            Cadastre-se
+                        <a class="btn btn-primary registrarT" href="#">
+                            Registrar terreno
                         </a>
 
                     </div>
@@ -59,47 +59,34 @@
         <!-- CONTEÚDO -->
         <main class="flex-grow-1 d-flex align-items-center justify-content-center px-3">
 
-            <form id=formLogin class="border border-dark rounded p-4 p-md-5 w-100" style="max-width: 700px;">
+            <form class="border border-dark rounded p-4 p-md-5 w-100" style="max-width: 700px;">
 
-                <h3 class="text-center mb-2 titulo">
-                    Login
-                </h3>
+                <h5 class="text-center mb-2 titulo mt-0">
+                    Registrar Terreno
+                </h5>
 
-                <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input
-                        type="email"
-                        class="form-control"
-                        placeholder="Digite seu email" id="email" required>
-                </div>
+                <p class="text-center mb-4 text-muted small">
+                    Posicione-se em cada vértice do terreno e pressione “Capturar” para registrar a coordenada. O último ponto deve ser igual ao Ponto 1 para fechar a área delimitada.
+                </p>        
 
-                <div class="mb-4">
-                    <label class="form-label">Senha</label>
-                    <input
-                        type="password"
-                        class="form-control"
-                        placeholder="Digite sua senha" id="senha" required>
-                </div>
+                <div id="lista-pontos">
+                    <div class="mb-3">
+                        <label class="form-label">Ponto 1</label>
 
-                <div class="row g-2 align-items-center">
+                        <div class="d-flex gap-2 linha-ponto">
+                            <input
+                                type="text"
+                                name="coordenadas[]"
+                                class="form-control coordenada"
+                                placeholder="Coordenada">
 
-                    <div class="col-12 col-md">
-                        <button type="submit" class="btn loginbtn w-100">
-                            Login
-                        </button>
+                            <button type="button" class="btn cadastrobtn">
+                                Capturar
+                            </button>
+                        </div>
                     </div>
-
-                    <div class="col-12 col-md-auto text-center">
-                        <span class="text-muted small">OU</span>
-                    </div>
-
-                    <div class="col-12 col-md">
-                        <a href="cadastrarconta.html" class="btn cadastrobtn w-100">
-                            Cadastrar-se
-                        </a>
-                    </div>
-
                 </div>
+    
 
             </form>
 
@@ -114,7 +101,6 @@
 
     </div>
 
-    <script src="js/enviar_login.js"></script>
 </body>
 
 </html>
