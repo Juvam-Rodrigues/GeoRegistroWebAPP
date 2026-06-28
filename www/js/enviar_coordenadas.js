@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         try {
-            const resposta = await fetch("http://localhost:8080/cadastrarterrenos", {
+            const resposta = await fetch("https://georegistro-api.onrender.com/cadastrarterrenos", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

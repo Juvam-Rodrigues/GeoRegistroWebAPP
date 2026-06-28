@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const dados = { nome, email, senha };
 
         try {
-            const resposta = await fetch("http://localhost:8080/cadastrarusuario", {
+            const resposta = await fetch("https://georegistro-api.onrender.com/cadastrarusuario", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

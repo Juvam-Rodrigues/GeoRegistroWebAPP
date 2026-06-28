@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         try {
-            const resposta = await fetch("http://localhost:8080/login", {
+            const resposta = await fetch("https://georegistro-api.onrender.com/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
