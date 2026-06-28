@@ -35,12 +35,24 @@ nav div a {
     border-color: #06323A !important;
 }
 
+.deslogar {
+    background-color: #06323A;
+    border-radius: 16px;
+    color: #EAEEEF !important;
+    border-color: #06323A !important;
+}
+
 nav div a:hover {
     color: #91D625 !important;
 }
 
 .registrarT:hover {
     background-color: #91D625;
+    color: #EAEEEF !important;
+}
+
+.deslogar:hover{
+    background-color: #d62525;
     color: #EAEEEF !important;
 }
 

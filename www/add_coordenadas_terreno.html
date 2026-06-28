@@ -24,29 +24,19 @@
             <div class="container-fluid">
 
                 <a class="navbar-brand" href="#">
-                    <img
-                        src="/images/logoGeo.png"
-                        alt="Logo GeoRegistro"
-                        class="img-fluid"
-                        style="max-width: 145px;">
+                    <img src="/images/logoGeo.png" alt="Logo GeoRegistro" class="img-fluid" style="max-width: 145px;">
                 </a>
 
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#menu"
-                    aria-controls="menu"
-                    aria-expanded="false"
-                    aria-label="Abrir menu">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="menu">
                     <div class="ms-auto d-flex flex-column flex-lg-row align-items-lg-center gap-3">
 
-                        <a class="btn btn-primary registrarT" href="#" id="btnCadastrarTerreno">
-                            Registrar terreno
+                        <a class="btn btn-primary deslogar" href="#" id="btnDeslogar">
+                            Deslogar
                         </a>
 
                     </div>
@@ -66,17 +56,14 @@
 
                 <p class="text-center mb-4 text-muted small">
                     Posicione-se em cada vértice do terreno e pressione “Capturar” para registrar a coordenada.
-                </p>        
+                </p>
 
                 <div id="lista-pontos">
                     <div class="mb-3">
                         <label class="form-label">Ponto 1</label>
 
                         <div class="d-flex gap-2 linha-ponto">
-                            <input
-                                type="text"
-                                name="coordenadas[]"
-                                class="form-control coordenada"
+                            <input type="text" name="coordenadas[]" class="form-control coordenada"
                                 placeholder="Coordenada">
 
                             <button type="button" class="btn cadastrobtn">
@@ -85,7 +72,13 @@
                         </div>
                     </div>
                 </div>
-    
+
+                <div class="flex-grow-1 d-flex align-items-center justify-content-center mt-5">
+                    <a class="btn btn-primary registrarT" href="#" id="btnCadastrarTerreno">
+                            Registrar terreno
+                        </a>
+                </div>
+
 
             </form>
 

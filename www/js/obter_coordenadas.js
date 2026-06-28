@@ -83,7 +83,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function deslogar(event) {
+        localStorage.removeItem("idUsuario");
+        window.location.replace("index.html");
+    }
+
     document.querySelector(".cadastrobtn")
         .addEventListener("click", capturar);
 
+    document.querySelector("#btnDeslogar")
+        .addEventListener("click", deslogar);
 });
