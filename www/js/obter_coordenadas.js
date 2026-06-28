@@ -44,11 +44,12 @@ document.addEventListener("DOMContentLoaded", function () {
             const posicao = await obterLocalizacao();
             const precisaoDaPosicao = posicao.coords.accuracy;
             console.log("Precisão da coordenda: "+ precisaoDaPosicao);
-
+            
             if(precisaoDaPosicao > 20){
                 alert(`GPS fraco (${Math.round(precisaoDaPosicao)}m). Vá para um local aberto.`);
                 return;
             }
+            
             const ponto = [
                 posicao.coords.longitude,
                 posicao.coords.latitude

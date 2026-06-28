@@ -48,16 +48,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: JSON.stringify(dados)
             });
 
-            const texto = await resposta.text();
-
             if (!resposta.ok) {
-                alert("Erro ao cadastrar terreno: " + texto);
+                const erro = await resposta.text();
+                alert("Erro ao cadastrar terreno: " + erro);
                 return;
             }
 
-            const objTerreno = texto;
+            const objTerreno = await resposta.json();
+            alert("Terreno cadastrado com sucesso! A metragem do terreno é: " + Math.round(objTerreno.areaM2) + " m²");
 
-alert("Terreno cadastrado com sucesso! A metragem do terreno é: " + Math.round(objTerreno.areaM2) + " m²");
         } catch (error) {
             console.error("Erro de rede:", error);
             alert("Erro: falha ao conectar com a API.");
