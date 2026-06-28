@@ -12,7 +12,8 @@
     <link rel="icon" href="/images/icone.png" type="image/x-icon">
     <script src="/js/obter_coordenadas.js"></script>
     <script src="/js/enviar_coordenadas.js"></script>
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -64,7 +65,7 @@
 
                         <div class="d-flex gap-2 linha-ponto">
                             <input type="text" name="coordenadas[]" class="form-control coordenada"
-                                placeholder="Coordenada">
+                                placeholder="Coordenada" readonly>
 
                             <button type="button" class="btn cadastrobtn">
                                 Capturar
@@ -72,11 +73,11 @@
                         </div>
                     </div>
                 </div>
-
+                <div id="map" class="flex-grow-1 d-flex align-items-center justify-content-center mt-4 border border-dark rounded" style="height: 300px; width: 100%; margin-bottom: 20px;"></div>
                 <div class="flex-grow-1 d-flex align-items-center justify-content-center mt-5">
                     <a class="btn btn-primary registrarT" href="#" id="btnCadastrarTerreno">
-                            Registrar terreno
-                        </a>
+                        Registrar terreno
+                    </a>
                 </div>
 
 

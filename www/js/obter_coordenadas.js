@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    const map = L.map('map').setView([-5.7945, -35.2110], 13); // No mapa vai aparecer Natal por padrão
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+    const pontosMapa = [];
+
     const idUsuario = localStorage.getItem("idUsuario");
 
     if (!idUsuario) {
@@ -43,6 +49,14 @@ document.addEventListener("DOMContentLoaded", function () {
             ];
 
             coordenadas.push(ponto);
+            const lat = ponto[1];
+            const lon = ponto[0];
+
+            const marker = L.marker([lat, lon]).addTo(map);
+            pontosMapa.push(marker);
+
+            // centraliza o mapa no último ponto
+            map.flyTo([lat, lon], 18);
 
             console.log("ARRAY ATUAL:", coordenadas);
 
