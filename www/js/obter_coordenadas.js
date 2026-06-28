@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const precisaoDaPosicao = posicao.coords.accuracy;
             console.log("Precisão da coordenda: "+ precisaoDaPosicao);
 
-            if(precisaoDaPosicao > 50){
+            if(precisaoDaPosicao > 20){
                 alert(`GPS fraco (${Math.round(precisaoDaPosicao)}m). Vá para um local aberto.`);
                 return;
             }

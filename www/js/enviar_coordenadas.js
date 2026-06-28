@@ -55,8 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            alert("Terreno cadastrado com sucesso!");
+            const objTerreno = texto;
 
+alert("Terreno cadastrado com sucesso! A metragem do terreno é: " + Math.round(objTerreno.areaM2) + " m²");
         } catch (error) {
             console.error("Erro de rede:", error);
             alert("Erro: falha ao conectar com a API.");
