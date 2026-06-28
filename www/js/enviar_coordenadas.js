@@ -4,14 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     btnCadastrarTerreno.addEventListener("click", async function (event) {
 
-        const todosInputs = document.querySelectorAll('.coordenada');
+        event.preventDefault();
 
+        const todosInputs = document.querySelectorAll('.coordenada');
         const coordenadasValidas = [];
 
         todosInputs.forEach(input => {
-            //Há conteúdo dentro dos nputs
+
             if (input.value.trim() !== "") {
                 const [lon, lat] = input.value.split(",");
+
                 coordenadasValidas.push({
                     longitude: parseFloat(lon),
                     latitude: parseFloat(lat)
@@ -25,7 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // fecha o polígono
-        coordenadasValidas.push(coordenadasValidas[0]);
+        coordenadasValidas.push({
+            longitude: coordenadasValidas[0].longitude,
+            latitude: coordenadasValidas[0].latitude
+        });
 
         console.log("OK, pronto para enviar:", coordenadasValidas);
 
@@ -46,17 +51,16 @@ document.addEventListener("DOMContentLoaded", function () {
             const texto = await resposta.text();
 
             if (!resposta.ok) {
-                alert("Erro: falha ao cadastrar terreno: " + texto);
+                alert("Erro ao cadastrar terreno: " + texto);
                 return;
             }
 
             alert("Terreno cadastrado com sucesso!");
 
         } catch (error) {
-            console.error(error);
+            console.error("Erro de rede:", error);
             alert("Erro: falha ao conectar com a API.");
         }
-
     });
 
 });
