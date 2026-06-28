@@ -1,19 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
+
     const formLogin = document.getElementById("formLogin");
 
     formLogin.addEventListener("submit", async function (event) {
-        //Espera antes de recarregar a página
-        event.preventDefault(); 
+        event.preventDefault();
 
-        //Pegando email e senha do form e colocando numa variavel dados
-        var email = document.getElementById("email").value;
-        var senha = document.getElementById("senha").value
-        var dados = {
+        const email = document.getElementById("email").value;
+        const senha = document.getElementById("senha").value;
+
+        const dados = {
             email: email,
             senha: senha
         };
 
-        //tentando se conectar com a api e mandar o objeto "dados"
         try {
             const resposta = await fetch("http://localhost:8080/login", {
                 method: "POST",
@@ -23,14 +22,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: JSON.stringify(dados)
             });
 
+            const texto = await resposta.text();
+
             if (!resposta.ok) {
-                throw new Error("Erro ao fazer login");
+                alert("Erro: falha ao fazer login: " + texto);
+                return;
             }
 
-            const idUsuario = await resposta.text();
+            const idUsuario = texto;
+
             console.log("ID do usuário:", idUsuario);
 
-            // Salva o ID para uso nas próximas páginas
             localStorage.setItem("idUsuario", idUsuario);
 
             alert("Usuário logado com sucesso!");
@@ -38,7 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         } catch (erro) {
             console.error(erro);
-            alert("Erro.");
+            alert("Erro: falha ao conectar com a API.");
         }
     });
+
 });
