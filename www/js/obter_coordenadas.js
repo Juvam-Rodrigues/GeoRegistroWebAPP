@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //Função que vai rodar 10 capturas da mesma coordenada para ver se consegue a melhor precisão: <= 20
     async function capturarMelhorPosicao() {
         var capturasDaMesmaPosicao = [];
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 5; i++) {
             var posicao = await obterLocalizacao();
             capturasDaMesmaPosicao.push(posicao);
 
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
             }
 
-            if (i < 9) {
+            if (i < 4) {
             //Só vai dar um pause até a penúltima captura, pois depois da última não precisa pausar mais
             await pausarEntreCapturasDeMelhorPosicao(100);
             }
