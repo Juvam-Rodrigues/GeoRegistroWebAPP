@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     async function capturarMelhorPosicao() {
         var capturasDaMesmaPosicao = [];
         for (let i = 0; i < 10; i++) {
-            const posicao = await obterLocalizacao();
+            var posicao = await obterLocalizacao();
             capturasDaMesmaPosicao.push(posicao);
 
             //Se achar uma precisão de até 5m, já tá bem preciso. Logo para
