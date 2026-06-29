@@ -48,9 +48,15 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 0; i < 10; i++) {
             const posicao = await obterLocalizacao();
             capturasDaMesmaPosicao.push(posicao);
+
+            //Se achar uma precisão de até 5m, já tá bem preciso. Logo para
+            if(posicao.coords.accuracy <= 5){
+                break;
+            }
+
             if (i < 9) {
             //Só vai dar um pause até a penúltima captura, pois depois da última não precisa pausar mais
-            await pausarEntreCapturasDeMelhorPosicao(500);
+            await pausarEntreCapturasDeMelhorPosicao(200);
             }
         }
 
