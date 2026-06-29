@@ -37,22 +37,44 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    //Função para esperar entre capturas para não travar
+    function pausarEntreCapturasDeMelhorPosicao(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    //Função que vai rodar 10 capturas da mesma coordenada para ver se consegue a melhor precisão: <= 20
+    async function capturarMelhorPosicao() {
+        var capturasDaMesmaPosicao = [];
+        for (let i = 0; i < 10; i++) {
+            const posicao = await obterLocalizacao();
+            capturasDaMesmaPosicao.push(posicao);
+            if (i < 9) {
+            //Só vai dar um pause até a penúltima captura, pois depois da última não precisa pausar mais
+            await pausarEntreCapturasDeMelhorPosicao(500);
+            }
+        }
+
+        //função para ordenar do da menor captura até a maior
+        capturasDaMesmaPosicao.sort((a, b) => a.coords.accuracy - b.coords.accuracy);
+        return capturasDaMesmaPosicao[0];
+    }
+
     async function capturar(event) {
         const botao = event.target;
 
         try {
-            const posicao = await obterLocalizacao();
-            const precisaoDaPosicao = posicao.coords.accuracy;
-            console.log("Precisão da coordenda: "+ precisaoDaPosicao);
-            
-            if(precisaoDaPosicao > 20){
+            const melhorCapturaPosicao = await capturarMelhorPosicao();
+            const precisaoDaPosicao = melhorCapturaPosicao.coords.accuracy;
+            console.log("Precisão da coordenda: " + precisaoDaPosicao);
+
+            if (precisaoDaPosicao > 20) {
                 alert(`GPS fraco (${Math.round(precisaoDaPosicao)}m). Vá para um local aberto.`);
                 return;
             }
-            
+
             const ponto = [
-                posicao.coords.longitude,
-                posicao.coords.latitude
+                melhorCapturaPosicao.coords.longitude,
+                melhorCapturaPosicao.coords.latitude
             ];
 
             coordenadas.push(ponto);
