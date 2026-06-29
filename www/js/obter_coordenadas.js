@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        //função para ordenar do da menor captura até a maior
+        //função para ordenar da menor captura até a maior
         capturasDaMesmaPosicao.sort((a, b) => a.coords.accuracy - b.coords.accuracy);
         return capturasDaMesmaPosicao[0];
     }
