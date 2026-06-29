@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (i < 9) {
             //Só vai dar um pause até a penúltima captura, pois depois da última não precisa pausar mais
-            await pausarEntreCapturasDeMelhorPosicao(200);
+            await pausarEntreCapturasDeMelhorPosicao(100);
             }
         }
 
